@@ -1,3 +1,7 @@
-import random
+import lrng
 
-print(random.randint(1,2))
+rolls = []
+for i in range(100):
+    rolls.append(lrng.die_roll())
+
+print(rolls)
