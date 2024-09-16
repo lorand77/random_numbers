@@ -1,7 +1,16 @@
 import lrng
+import matplotlib.pyplot as plt
 
 rolls = []
-for i in range(100):
-    rolls.append(lrng.die_roll())
+counts = [0] * 6
+for i in range(6000):
+    roll = lrng.die_roll()
+    rolls.append(roll)
+    counts[roll - 1] += 1
 
-print(rolls)
+print(counts)
+
+# print(rolls)
+plt.hist(rolls, bins = 6)
+plt.show()
+
