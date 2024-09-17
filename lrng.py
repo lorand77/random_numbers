@@ -8,9 +8,9 @@ def lgc(x):
     c = 74
     return (x * a + c) % m
 
-state = int(time.time()*1000) % MAX_RAND_INT   ## seed 
+state = int(time.time()*1_000_000) % MAX_RAND_INT   ## seed 
 
-def die_roll():
+def roll_die():
     global state
     state = lgc(state)
     return state % 6 + 1
