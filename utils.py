@@ -1,6 +1,6 @@
 def find_longest_streak(x):
     if len(x) == 0:
-        return (0, 0)
+        return {"position": 0, "streak": 0}
     position = 0
     streak = 1
     i = 0
@@ -11,5 +11,13 @@ def find_longest_streak(x):
         if j - i > streak:
             streak = j - i
             position = i
-        i += j - i
-    return (position, streak)
+        i = j
+    return {"position": position, "streak": streak}
+
+
+# print(find_longest_streak([]))
+# print(find_longest_streak([1]))
+# print(find_longest_streak([1,2]))
+# print(find_longest_streak([1,1]))
+# print(find_longest_streak([1,1,2]))
+# print(find_longest_streak([1,2,2]))
