@@ -1,12 +1,14 @@
 import lrng
 import matplotlib.pyplot as plt
 import utils
+import random
 
 rolls = []
 counts = [0] * 6
 counts_pairs = [[0] * 6, [0] * 6, [0] * 6, [0] * 6, [0] * 6, [0] * 6]
 for i in range(1000000):
     roll = lrng.roll_die()
+    # roll = random.randint(1, 6)
     rolls.append(roll)
     counts[roll - 1] += 1
 
