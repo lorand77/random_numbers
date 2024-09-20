@@ -10,12 +10,11 @@ for i in range(1000000):
     roll = lrng.roll_die()
     # roll = random.randint(1, 6)
     rolls.append(roll)
-    counts[roll - 1] += 1
-
-for i in range(len(rolls)-1):
-    r1 = rolls[i] 
-    r2 = rolls[i+1]
-    counts_pairs[r1-1][r2-1] += 1
+    counts[roll - 1] += 1   
+    if i != 0:
+        r1 = rolls[i - 1]
+        r2 = rolls[i]
+        counts_pairs[r1-1][r2-1] += 1
 
 print(counts)
 print(counts_pairs)
