@@ -1,3 +1,5 @@
+import lrng
+
 def find_longest_streak(x):
     if len(x) == 0:
         return {"position": 0, "streak": 0}
@@ -23,3 +25,9 @@ def find_minimum(x):
         if minimum > x[i]:
             minimum = x[i]
     return minimum
+
+def sum_of_n_rolls(n):
+    sum_of_rolls = 0
+    for i in range(n):
+        sum_of_rolls += lrng.roll_die()
+    return sum_of_rolls
