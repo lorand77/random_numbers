@@ -13,3 +13,13 @@ def find_longest_streak(x):
             position = i
         i = j
     return {"position": position, "streak": streak}
+
+
+def find_minimum(x):
+    if x == []:
+        raise ValueError("list should not be empty")
+    minimum = x[0]
+    for i in range(len(x)):
+        if minimum > x[i]:
+            minimum = x[i]
+    return minimum
